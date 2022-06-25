@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title></title>
+    <style>
+        html {
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: black;
+
+        }
+
+        body>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 15vh !important;
+            background-color: green;
+            border-style: solid;
+            border-color: white;
+            border-width: 2;
+            color: white;
+            font-size: 17px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            cursor: pointer;
+            width: 200px;
+            height: 60px;
+        }
+
+        h1,
+        h2 {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-top: 60px;">
+        <h1 id="first">Tudo certo!</h1>
+        <h1 id="second">Clique no botão abaixo para assistir o vídeo!</h1>
+
+        <button onclick="openLink()" id="botao-venda">Clique aqui!</button>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    var pageAttrs = {
+        tituloPagina: "Foi revelado",
+        primeiroTexto: "TUDO CERTO!",
+        segundoTexto: "APERTE NO BOTÃO ABAIXO PARA ASSISTIR O VÍDEO!",
+        textoBotao: "Aperte aqui",
+        corBotao: "#ffa400",
+        linkBotao: ""
+    };
+    window.onload = function () {
+        document.title = pageAttrs.tituloPagina;
+        $("#first").text(pageAttrs.primeiroTexto);
+        $("#second").text(pageAttrs.segundoTexto);
+        $("#botao-venda").text(pageAttrs.textoBotao);
+        $("#botao-venda").css("background", pageAttrs.corBotao);
+        $("#first").css("color", pageAttrs.corBotao);
+    }
+    function openLink() {
+        window.open(pageAttrs.linkBotao, "_self")
+    }
+</script>
+
+</html>
